@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class SpriteMover : MonoBehaviour
 {
@@ -43,6 +45,11 @@ public class SpriteMover : MonoBehaviour
             {
                 tf.position = tf.position + Vector3.left * Time.deltaTime;
             }
+        }
+        //This works if player is holding down shift or ISN'T holding down shift.
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            tf.position = new Vector3(0, 0, 0);
         }
     }
 }
